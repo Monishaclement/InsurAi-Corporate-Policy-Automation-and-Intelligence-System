@@ -1,0 +1,68 @@
+InsureAI —  Project Specification
+________________________________________
+1. Overview / Vision
+InsureAI is a simple web app for insurance claims. Users can log in, see their policies, submit claims with documents, and get AI suggestions. Admins can review claims and update their status.
+________________________________________
+2. Features
+Must-have
+1.	Signup & Login (with password protection)
+2.	Policy list (view user’s policies)
+3.	Submit Claim (form with details + upload files)
+4.	AI Suggestions (basic rule-based: suggests claim type and payout range)
+5.	Admin Dashboard (approve/reject claims)
+6.	Claim History (user sees status of past claims)
+Optional
+•	Email alerts for status updates
+•	Payments simulation
+•	Better AI with ML model
+________________________________________
+3. Tech Stack
+•	Frontend: React + Tailwind CSS + React Router
+•	Backend: Spring Boot (Java)
+•	Database:MySQL
+•	File storage: Local/S3
+•	AI Service: Python FastAPI (simple rules or small ML model)
+•	Deployment: Docker + Heroku/Render
+________________________________________
+4. Architecture
+•	Frontend (React) → talks to Backend (Spring Boot API) → stores data in Postgres
+•	Backend saves uploaded files to S3/local storage
+•	Backend sends claim details to AI microservice → gets suggestions back
+•	Admin uses same frontend but sees dashboard view
+________________________________________
+5. User Stories + Acceptance Criteria
+Signup/Login
+•	User can create account and log in
+•	Passwords stored securely
+View Policies
+•	User sees only their policies
+Submit Claim
+•	User fills form with details + uploads images (≤5MB)
+•	Claim saved with status “Submitted”
+AI Suggestions
+•	After submission, user sees AI’s category + payout estimate
+Admin Review
+•	Admin sees all pending claims
+•	Can approve, reject, or request more info
+Claim History
+•	User can check status anytime
+________________________________________
+6. Simple Diagrams
+Flow: Submit Claim
+1.	User → Fill claim form
+2.	Backend → Save to DB + store files
+3.	Backend → Ask AI service for suggestions
+4.	AI → Send back category + estimate
+5.	Backend → Show result to user
+Architecture Diagram (text form)
+•	React Frontend ↔ Spring Boot API ↔ PostgreSQL
+•	Spring Boot ↔ File Storage (S3/local)
+•	Spring Boot ↔ AI Microservice (FastAPI)
+________________________________________
+7. Plan (6 Weeks)
+•	Week 1: Setup frontend + backend + DB
+•	Week 2: Add signup/login
+•	Week 3: Policy listing
+•	Week 4: Claim form + file upload
+•	Week 5: AI suggestions + admin dashboard
+•	Week 6: Polish UI + deploy
