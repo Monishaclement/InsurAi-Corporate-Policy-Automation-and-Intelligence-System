@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1E90FF; /* Blue color */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links li a.login-btn {
+  background-color: #1E90FF;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.nav-links li a.login-btn:hover {
+  background-color: #1c86ee;
+}
+
