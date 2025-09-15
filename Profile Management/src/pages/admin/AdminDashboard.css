@@ -1,0 +1,98 @@
+.admin-dashboard {
+  padding: 20px 0;
+}
+
+.admin-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: var(--light);
+  transition: var(--transition);
+}
+
+.activity-item:hover {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.activity-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.activity-details p {
+  margin-bottom: 5px;
+}
+
+.activity-details span {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.admin-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.admin-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  border: none;
+  border-radius: 10px;
+  padding: 20px 15px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.admin-action-btn:hover {
+  background: var(--secondary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.admin-action-btn i {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.admin-action-btn span {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .admin-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-actions {
+    grid-template-columns: 1fr;
+  }
+}

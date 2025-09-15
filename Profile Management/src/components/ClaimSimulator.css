@@ -1,0 +1,211 @@
+.claim-simulator {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+.claim-simulator h3 {
+  color: var(--dark);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.claim-simulator > p {
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 25px;
+}
+
+.simulator-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.steps-indicator::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ddd;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.step.active .step-icon {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.step.completed .step-icon {
+  background: var(--success);
+  color: var(--white);
+}
+
+.step-title {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.completed-check {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  background: var(--success);
+  color: var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.step-content {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.step-content h4 {
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--white);
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.document-upload-demo {
+  margin-top: 20px;
+}
+
+.upload-box {
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.upload-box:hover {
+  border-color: var(--secondary);
+}
+
+.upload-box i {
+  font-size: 2.5rem;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.upload-box p {
+  margin-bottom: 15px;
+  color: var(--gray);
+}
+
+.upload-box button {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navigation-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:not(:disabled):hover {
+  background: var(--secondary);
+  color: var(--white);
+  border-color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .steps-indicator {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .steps-indicator::before {
+    display: none;
+  }
+  
+  .step {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .step-title {
+    text-align: left;
+  }
+  
+  .completed-check {
+    top: 15px;
+    right: auto;
+    left: 35px;
+  }
+}
