@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insurance Chatbot - Ava</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+  #chat { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; background: #fff; }
+  .user { color: blue; margin: 5px 0; }
+  .bot { color: green; margin: 5px 0; }
+  input { width: 75%; padding: 10px; margin-top: 10px; }
+  button { padding: 10px; }
+  h2 { color: #333; }
+</style>
+</head>
+<body>
+
+<h2>🤖 Ava - Your Insurance Chatbot</h2>
+<div id="chat"></div>
+<input type="text" id="userInput" placeholder="Ask a question..." />
+<button onclick="sendMessage()">Send</button>
+
+<script>
+// Predefined insurance FAQ
+const insuranceFAQ = [
+  { question: "life insurance", answer: "Life insurance provides financial protection to beneficiaries in case of the policyholder's death." },
+  { question: "term insurance", answer: "Term insurance covers a fixed period and pays a death benefit if the insured dies during that term." },
+  { question: "whole life insurance", answer: "Whole life insurance provides lifetime coverage and may include cash value accumulation." },
+  { question: "health insurance", answer: "Health insurance covers medical expenses due to illness, accident, or hospitalization." },
+  { question: "car insurance", answer: "Car insurance covers damages to your vehicle due to accidents, theft, or natural disasters." },
+  { question: "home insurance", answer: "Home insurance covers property damage, theft, and liability for your home." },
+  { question: "claim", answer: "To file a claim, notify your insurer, submit the required documents, and follow up for settlement." },
+  { question: "premium", answer: "Insurance premiums are the payments made to the insurer to maintain coverage." },
+  { question: "nominee", answer: "Nominees or beneficiaries receive the payout upon the insured event." },
+  { question: "regulator", answer: "The insurance regulator in India is IRDAI (Insurance Regulatory and Development Authority of India)." }
+];
+
+// Function to handle user input
+function sendMessage() {
+  const input = document.getElementById("userInput").value.trim();
+  if (!input) return;
+
+  addMessage("user", input);
+
+  // Simple case-insensitive match: find the first FAQ keyword in the user input
+  let answer = "Sorry, I don't know the answer to that. Please ask another insurance-related question.";
+  const lowerInput = input.toLowerCase();
+  for (const faq of insuranceFAQ) {
+    if (lowerInput.includes(faq.question)) {
+      answer = faq.answer;
+      break;
+    }
+  }
+
+  addMessage("bot", answer);
+  document.getElementById("userInput").value = "";
+}
+
+// Function to display messages in chat
+function addMessage(sender, text) {
+  const chat = document.getElementById("chat");
+  const div = document.createElement("div");
+  div.className = sender;
+  div.textContent = sender === "user" ? "You: " + text : "Ava: " + text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
