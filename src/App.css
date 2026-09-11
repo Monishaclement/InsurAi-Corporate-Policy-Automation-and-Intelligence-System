@@ -1,7 +1,9 @@
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fafb;
+  background: #f3f6fb;
+  color: #1f2937;
 }
 
 /* Navbar */
@@ -9,96 +11,103 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-  color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 18px 35px;
+  background: linear-gradient(90deg, #172554, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fbbf24;
+  color: #fde68a;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
-  color: white;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+  color: #ffffff;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+  font-size: 44px;
+  margin-bottom: 18px;
 }
 
 .hero p {
-  font-size: 20px;
-  margin-bottom: 25px;
+  font-size: 19px;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 18px;
 }
 
 .btn {
-  padding: 12px 24px;
+  padding: 13px 26px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn.primary {
-  background-color: #fbbf24;
-  color: black;
-  font-weight: bold;
+  background-color: #facc15;
+  color: #111827;
+  font-weight: 600;
 }
 
 .btn.primary:hover {
-  background-color: #f59e0b;
+  background-color: #eab308;
+  transform: translateY(-2px);
 }
 
 .btn.secondary {
-  background-color: white;
-  color: #1e3a8a;
-  font-weight: bold;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  font-weight: 600;
 }
 
 .btn.secondary:hover {
-  background-color: #e5e7eb;
+  background-color: #eff6ff;
+  transform: translateY(-2px);
 }
 
 /* Page Styling */
 .page {
   text-align: center;
-  padding: 50px;
+  padding: 60px 30px;
 }
 
 .page h1 {
-  color: #1e3a8a;
-  margin-bottom: 15px;
+  color: #1e40af;
+  margin-bottom: 18px;
+  font-size: 32px;
 }
+
